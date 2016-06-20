@@ -2,6 +2,7 @@
   "name": "react-minimal-boilerplate",
   "version": "1.0.0",
   "description": "A minimal starter playground for a project leveraging es6 and react",
+  "author": "everdimension",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -9,8 +10,6 @@
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "everdimension",
-  "license": "ISC",
   "devDependencies": {
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
@@ -22,5 +21,16 @@
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
-  }
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/everdimension/react-minimal-boilerplate.git"
+  },
+  "keywords": [
+    "react boilerplate",
+    "webpack boilerplate",
+    "webpack starter",
+    "es6 starter"
+  ]
 }
