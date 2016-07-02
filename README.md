@@ -10,3 +10,9 @@ But sometimes you wish to have a little more control or be able to freely add/re
 * No production configuration
 * No unnecessary files
 * Minimum dependencies just to have es6 and react working
+
+### How to use
+
+1. Clone project
+
+        git clone -o react-minimal-boilerplate git@github.com:everdimension/react-minimal-boilerplate.git

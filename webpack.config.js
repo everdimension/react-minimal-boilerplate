@@ -39,7 +39,7 @@ module.exports = {
     },
   ],
   devServer: {
-		stats: 'errors-only',
+    stats: 'errors-only',
     port: 3000,
     contentBase: path.resolve(__dirname, 'build'),
     publicPath: '/',
