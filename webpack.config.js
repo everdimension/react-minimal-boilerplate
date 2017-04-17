@@ -1,24 +1,47 @@
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
+
+const PORT = 3000;
 
 module.exports = {
-  entry: {
-    app: ['./src/index'],
-  },
+  entry: [
+    'react-hot-loader/patch',
+    `webpack-dev-server/client?http://0.0.0.0:${PORT}`,
+    'webpack/hot/only-dev-server',
+    './src/index',
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].bundle.js',
+    filename: 'app.bundle.js',
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loaders: [
+          'react-hot-loader/webpack',
+          'awesome-typescript-loader',
+        ],
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
     ],
   },
+  resolve: {
+    extensions: ['', '.ts', '.tsx', '.js'],
+  },
   plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     function copyPage() {
       // provide src/index.html as an asset
       this.plugin('emit', function (compilation, cb) {
@@ -40,7 +63,9 @@ module.exports = {
   ],
   devServer: {
     stats: 'errors-only',
-    port: 3000,
+    host: '0.0.0.0',
+    port: PORT,
+    hot: true,
     contentBase: path.resolve(__dirname, 'build'),
     publicPath: '/',
   },
