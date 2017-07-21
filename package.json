@@ -1,6 +1,6 @@
 {
   "name": "react-minimal-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal starter playground for a project leveraging es6 and react",
   "author": "everdimension",
   "main": "src/index.js",
